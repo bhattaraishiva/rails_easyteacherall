@@ -1,35 +1,44 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Courses</h1>
-
-<table>
+<%- model_class = Course -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Coursename</th>
-      <th>Responsibleperson</th>
-      <th>Duration</th>
-      <th>Description</th>
-      <th>Useremail</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:coursename) %></th>
+      <th><%= model_class.human_attribute_name(:responsibleperson) %></th>
+      <th><%= model_class.human_attribute_name(:duration) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:user_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @courses.each do |course| %>
       <tr>
+        <td><%= link_to course.id, course_path(course) %></td>
         <td><%= course.coursename %></td>
         <td><%= course.responsibleperson %></td>
         <td><%= course.duration %></td>
         <td><%= course.description %></td>
-        <td><%= course.user.email %></td>
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= course.user_id %></td>
+        <td><%=l course.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_course_path(course), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      course_path(course),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Course', new_course_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_course_path,
+            :class => 'btn btn-primary' %>
