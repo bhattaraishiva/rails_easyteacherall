@@ -14,3 +14,11 @@
  *= require_tree .
  *= require_self
  */
+ #user_nav {
+   color: #1C1C;
+   height: 30px;
+   font-weight: normal;
+   font-size:16px;
+   margin-top: 10px;
+ }
+ 

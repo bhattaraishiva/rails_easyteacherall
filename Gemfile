@@ -53,6 +53,7 @@ group :development, :test do
   gem 'pry'
   gem 'pry-nav'
   gem 'pry-rails'
+  gem 'byebug'
 end
 
 group :development do

@@ -23,7 +23,7 @@
         <td><%= course.responsibleperson %></td>
         <td><%= course.duration %></td>
         <td><%= course.description %></td>
-        <td><%= course.user_id %></td>
+        <td><%= course.user.email %></td>
         <td><%=l course.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
