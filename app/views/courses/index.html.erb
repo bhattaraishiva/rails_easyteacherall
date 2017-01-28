@@ -3,27 +3,14 @@
   <h1><%=t '.title', :default => t("helpers.titles.index") %></h1>
 </div>
 
-<%= link_to t('.new', :default => t("helpers.links.new")), new_course_path, :class => 'btn btn-primary' %>
+<%= link_to t('.new', :default => t("Course")), showall_courses_path, :class => 'btn btn-primary' %>
 
-<%= link_to t('.new', :default => t("Batch")), new_course_path, :class => 'btn btn-primary' %>
+<%= link_to t('.new', :default => t("Batch")), batches_path, :class => 'btn btn-primary' %>
 
-<%= link_to t('.new', :default => t("Class")), new_course_path, :class => 'btn btn-primary' %>
+<%= link_to t('.new', :default => t("Class")), studentclasses_path, :class => 'btn btn-primary' %>
 
-<%= link_to t('.new', :default => t("Section")), new_course_path, :class => 'btn btn-primary' %>
+<%= link_to t('.new', :default => t("Section")),  studentsections_path, :class => 'btn btn-primary' %>
 
-<%= link_to t('.new', :default => t("Code")), new_course_path, :class => 'btn btn-primary' %>
+<%= link_to t('.new', :default => t("Code")), coursecodes_path, :class => 'btn btn-primary' %>
 
 <%= link_to t('.new', :default => t("Chapters")), new_course_path, :class => 'btn btn-primary' %>
-
-<br>
-<br>
-
-<%= link_to t('.showall', :default => t("helpers.titles.showall" )), showall_courses_path, :class => 'btn btn-primary' %>
-
-<%= link_to t('.showall', :default => t("showbatch" )), showall_courses_path, :class => 'btn btn-primary' %>
-
-<%= link_to t('.showall', :default => t("showclass")), showall_courses_path, :class => 'btn btn-primary' %>
-
-<%= link_to t('.showall', :default => t("showsection" )), showall_courses_path, :class => 'btn btn-primary' %>
-
-<%= link_to t('.showall', :default => t("showcode" )), showall_courses_path, :class => 'btn btn-primary' %>

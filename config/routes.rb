@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :studentsections
+  resources :studentclasses
+  resources :coursecodes
+  resources :batches
   devise_for :users
   root "courses#index"
   resources :courses do

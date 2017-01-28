@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170124121319) do
+ActiveRecord::Schema.define(version: 20170126162002) do
+
+  create_table "batches", force: :cascade do |t|
+    t.string   "batchname"
+    t.text     "batchdescription"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "coursecodes", force: :cascade do |t|
+    t.string   "codename"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "courses", force: :cascade do |t|
     t.string   "coursename"
@@ -20,6 +33,24 @@ ActiveRecord::Schema.define(version: 20170124121319) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.integer  "user_id"
+    t.integer  "coursecode_id"
+    t.date     "startdate"
+    t.date     "enddate"
+    t.integer  "batch_id"
+    t.integer  "studentclass_id"
+    t.integer  "studentsection_id"
+  end
+
+  create_table "studentclasses", force: :cascade do |t|
+    t.string   "studentclass"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "studentsections", force: :cascade do |t|
+    t.string   "studentsection"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "users", force: :cascade do |t|

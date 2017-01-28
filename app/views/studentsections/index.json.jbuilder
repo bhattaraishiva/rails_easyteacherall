@@ -1,0 +1,1 @@
+json.array! @studentsections, partial: 'studentsections/studentsection', as: :studentsection

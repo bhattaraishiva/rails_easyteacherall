@@ -1,0 +1,1 @@
+json.array! @coursecodes, partial: 'coursecodes/coursecode', as: :coursecode

@@ -1,0 +1,2 @@
+module CoursecodesHelper
+end
